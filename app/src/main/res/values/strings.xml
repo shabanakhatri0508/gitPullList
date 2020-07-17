@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">githubOpenPulls</string>
+    <string name="enter_owner_name">Github owner name</string>
+    <string name="repo_name">Repo Name</string>
+    <string name="submit">Submit</string>
+    <string name="please_enter_owner_name">Please enter owner name</string>
+    <string name="please_enter_repo_name">Please enter repo name</string>
+    <string name="pull_title">Pull title :</string>
+    <string name="pull_status">"Pull Status : "</string>
+    <string name="created_at">"Created at : "</string>
+</resources>
