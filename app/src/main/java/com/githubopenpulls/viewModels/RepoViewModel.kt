@@ -17,7 +17,7 @@ class RepoViewModel : BaseViewModel() {
     private var mRepoName: ObservableField<String> = ObservableField()
     private var subscription: CompositeDisposable = CompositeDisposable()
     private val mLoadingVisibility: MutableLiveData<Int> = MutableLiveData()
-    private val errorMessage: MutableLiveData<String> = MutableLiveData()
+    private val mErrorMessage: MutableLiveData<String> = MutableLiveData()
     private var mPullList: MutableLiveData<ArrayList<PullInfo>> = MutableLiveData()
 
     @Inject
@@ -25,6 +25,10 @@ class RepoViewModel : BaseViewModel() {
 
     fun getObservableOwnerName(): ObservableField<String> {
         return mOwnerName
+    }
+
+    fun getErrorMessage(): MutableLiveData<String> {
+        return mErrorMessage
     }
 
     fun getLoadingVisibility(): MutableLiveData<Int> {
@@ -66,16 +70,16 @@ class RepoViewModel : BaseViewModel() {
     }
 
     private fun onRetrievePostListStart() {
-        mLoadingVisibility.value = View.VISIBLE
-        errorMessage.value = null
+        mLoadingVisibility.value = 1
+        mErrorMessage.value = null
     }
 
     private fun onRetrievePostListFinish() {
-        mLoadingVisibility.value = View.GONE
+        mLoadingVisibility.value = 0
     }
 
     private fun onRetrievePostListError(error: String?) {
-        errorMessage.value = error!!
+        mErrorMessage.value = error!!
     }
 
     override fun onCleared() {

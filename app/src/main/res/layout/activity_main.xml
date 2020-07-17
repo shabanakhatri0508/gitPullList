@@ -38,6 +38,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_owner_name"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
                 android:paddingStart="8dp"
                 android:paddingEnd="0dp"
                 android:text="@={data.observableOwnerName}" />
@@ -59,6 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/repo_name"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
                 android:paddingStart="8dp"
                 android:paddingEnd="0dp"
                 android:text="@={data.observableRepoName}" />

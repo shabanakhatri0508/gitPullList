@@ -75,15 +75,19 @@ class MainActivity : AppCompatActivity() {
         })
         mRepoViewModel.getLoadingVisibility().observe(this, Observer {
             if (it != null) {
+                Log.e("Progress", it.toString())
                 if (it == 1)
                     showProgress()
                 else
                     hideProgress()
             }
         })
+        mRepoViewModel.getErrorMessage().observe(this, Observer {
+            Toast.makeText(this, getString(R.string.no_pul_request_found_with_given_info), Toast.LENGTH_SHORT).show()
+        })
     }
 
-    fun showProgress() {
+    private fun showProgress() {
         if (mProgressDialog == null) {
             mProgressDialog = Dialog(this)
             mProgressDialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)

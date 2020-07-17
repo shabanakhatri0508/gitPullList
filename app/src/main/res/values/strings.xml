@@ -8,4 +8,5 @@
     <string name="pull_title">Pull title :</string>
     <string name="pull_status">"Pull Status : "</string>
     <string name="created_at">"Created at : "</string>
+    <string name="no_pul_request_found_with_given_info">No pull request found with given info</string>
 </resources>
